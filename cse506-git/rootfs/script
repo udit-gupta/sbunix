@@ -1,0 +1,17 @@
+#!/bin/sh
+echo Welcome to SBUnix
+echo
+echo List of all files
+ls
+echo
+echo contents of hello.txt\n
+cat hello.txt
+echo running process\n
+echo
+ps
+echo
+echo present working directory\n
+pwd
+echo
+echo avaliable commands
+man
