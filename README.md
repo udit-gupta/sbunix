@@ -1,20 +1,20 @@
 **********************************************************************************************************
                           
 				
-					C S E   -   5 0 6   S B U N I X
+				              C S E   -   5 0 6   S B U N I X
 
 
 
-		          P R O J E C T    F E A T U R E S  :  Preemptive OS with  File System
+		           P R O J E C T    F E A T U R E S  :  Preemptive OS with  File System
 
-                          P R O J E C T    P O I N T S      :  7 0
+                                     P R O J E C T    P O I N T S      :  7 0
 
 				
 
 **********************************************************************************************************
 
 
-                                         I M P O R T A N T     P O I N T S	
+                                          I M P O R T A N T     P O I N T S	
 
 
 **********************************************************************************************************
@@ -28,7 +28,10 @@ If new disk is to created, here are the following steps:
 
     1. Run the qemu command to create a 20 MB disk named "sbunix_hdd.img" : qemu-img create sbunix_hdd.img 20M 
 
-    2. Insert the superblock to that image using the following command :  dd if=supeblock of=sbunix_hdd.imgseek=1 conv=notrunc (superblock file is provided in the home directory, which is being generated using intialize_superblock.c)
+    2. Insert the superblock to that image using the following command :  
+                  dd if=supeblock of=sbunix_hdd.imgseek=1 conv=notrunc 
+    (superblock file is provided in the home directory, 
+    which is being generated using intialize_superblock.c)
 
     3. Now the sbunix_hdd.img is ready to be used for the operating system. 
 
@@ -39,7 +42,8 @@ Type shutdown on shell.
                             
 SHELL COMMANDS :
 
-Supported commands are : cd, cd .., ls, cat, shutdown, echo, sleep, ps, sh, man, pwd, vi.
+Supported commands are : 
+cd, cd .., ls, cat, shutdown, echo, sleep, ps, sh, man, pwd, vi.
 
 
 **********************************************************************************************************
@@ -66,8 +70,10 @@ Supported commands are : cd, cd .., ls, cat, shutdown, echo, sleep, ps, sh, man,
                     fd from the buffer buf.
     Dependencies :  Always open a file using OPEN system call before writing and close the file after 
 		    completion. 
-                    Returns -1 for files opened with O_RDONLY flag set. Cannot do write on files in tarfs.
-    Return       :  In the case of success, it returns the length of bytes written into the buffer while in                    the case of error returns the value of -1
+                    Returns -1 for files opened with O_RDONLY flag set. 
+                    Cannot do write on files in tarfs.
+    Return       :  In the case of success, it returns the length of bytes written into the 
+                    buffer while in the case of error returns the value of -1
 
     
     Name         :  MALLOC()
@@ -133,7 +139,8 @@ Supported commands are : cd, cd .., ls, cat, shutdown, echo, sleep, ps, sh, man,
     Syntax       :  readdir(DIR* node)
     Description  :  This system call lists contents in directory and iteratively call readdir. 
     Dependencies :  Read directory is followed after open directory system call.
-    Return       :  returns the pointer to dirent structure .Returns NULL if reached end of directory or on                    occurence of an error. 
+    Return       :  returns the pointer to dirent structure .
+                    Returns NULL if reached end of directory or on occurence of an error. 
 
 
 
